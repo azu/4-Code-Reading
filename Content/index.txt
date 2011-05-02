@@ -1,0 +1,21 @@
+﻿:Home
+
+@description このサイトはコードリーディングを目的としたサイト
+
+@Body
+![site logo](/image/logo.jpg)
+
+@News
+### News
+
+このサイトはコードリーディングを目的としたサイトです。
+
+サイドバーから各コンテンツにアクセスできます。
+
+このサイトは[DropPages]上で運営されています。気休め程度の[RSS]もあります。
+
+[![site logo][RSSICON]][RSS]
+
+[RSS]: http://rssc.dokoda.jp/r/3b1a6b870a1b22c04257dbc6af5573e8/http/sig.droppages.com/sitemap
+[RSSICON]: /image/feed-icon-28x28.png
+[DropPages]: http://droppages.com/

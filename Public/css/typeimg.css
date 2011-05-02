@@ -1,0 +1,81 @@
+/* Type & image presets */
+
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px; /* Changing this will break the baseline grid. */
+    -webkit-text-size-adjust: none; /* Stops the iPhone scalling type up */
+}
+
+a {
+    text-decoration: none;
+    color: #005698;
+    font-weight: bold;
+    border-bottom: 1px solid #adadad;
+}
+
+a:hover {
+    color: #000;
+    border-bottom: none;
+}
+
+p, ul, ol, blockquote {
+    margin-bottom: 24px; /* Changing this will break the baseline grid. */
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+blockquote {
+    border-left: 1px solid #c1c1c1;
+    color: #747474;
+    padding-left: 15px;
+    margin-left: -15px;
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 36px; /* Changing this will break the baseline grid. */
+    margin-bottom: 16px; /* Changing this will break the baseline grid. */
+    font-family: Georgia;
+    font-weight: lighter;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 16px; /* Changing this will break the baseline grid. */
+    font-family: Georgia, serif;
+    font-weight: lighter;
+}
+
+h3 {
+    font-size: 16px;
+    margin-bottom: 16px; /* Changing this will break the baseline grid. */
+    font-family: Georgia, serif;
+    font-weight: lighter;
+}
+
+pre {
+    overflow: auto; /*--If the Code exceeds the width, a scrolling is available--*/
+    overflow-Y: hidden; /*--Hides vertical scroll created by IE--*/
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+pre {
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    background: #f0f0f0;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    line-height: 20px; /*--Height of each line of code--*/
+
+}
+
+pre code {
+    margin: 0 0 0 5px; /*--Left Margin--*/
+    padding: 18px 0;
+    display: block;
+}
