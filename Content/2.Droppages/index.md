@@ -28,4 +28,8 @@ JetBrains製IDEにはスニペット的なFile Templeteがあるので、以下�
 
 という感じで、変数がなかったときの初期値もかけるので意外とテンプレートも工夫できる。
 
+このサイトのテンプレートとかを含めて[azu/4-Code-Reading - GitHub]に置いてある。
+
+
 [DropPages]: http://droppages.com/
+[azu/4-Code-Reading - GitHub]: https://github.com/azu/4-Code-Reading "azu/4-Code-Reading - GitHub"
