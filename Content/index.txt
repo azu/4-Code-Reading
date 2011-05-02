@@ -1,12 +1,9 @@
 ﻿:Home
 
-@description このサイトはコードリーディングを目的としたサイト
+@description このサイトはJavaScriptのコードリーディングを目的としたサイトです
 
 @Body
-![site logo](/image/logo.jpg)
-
-@News
-### News
+### このサイトについて
 
 このサイトはコードリーディングを目的としたサイトです。
 
