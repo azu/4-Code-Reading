@@ -9,7 +9,7 @@ DropPagesはMarkdown形式でContentを書いていける。
 そのため、デフォルトテーマだとtxtなどの拡張子になってるけど、mdやmarkdownなどの拡張子でも問題なく使える。
 
 元々WebStormの[Markdown](http://plugins.intellij.net/plugin/?webide&amp;id=5970 "Markdown")プラグインがあって、
-これでコード読みながらMarkdownでいろいろ書けたら捗りそうだなと思ったところでDropPagesができてたので、WebStormを使って
+これでコード読みながらMarkdownでいろいろ書けたら捗りそうだなと思ったところでDropPagesがちょうどあったので、WebStormを使って
 書いていく。
 
 JetBrains製IDEにはスニペット的なFile Templeteがあるので、以下のように最初にDropPagesに使えそうな変数をあらかじめ作って書くようにする。

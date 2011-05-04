@@ -148,6 +148,10 @@ h1, h2, h3 {
 
 .eye-catch {
     width: 100%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 10px;
 }
 
 .rss {
