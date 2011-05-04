@@ -29,8 +29,47 @@
     <!-- Put your layout here -->
     <link rel="stylesheet" href="/css/layout.css" type="text/css" media="screen"/>
     <link rel="stylesheet" href="/highlight/styles/default.css">
-    <script src="/highlight/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad('xml', 'html', 'css', 'javascript');</script>
+    <script src="/highlight/highlight.pack.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.6.min.js" type="text/javascript"></script>
+    <script src="/js/extoc_1_0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        var locationWrapper = {
+            put: function(hash, win) {
+                (win || window).location.hash = this.encoder(hash);
+            },
+            get: function(win) {
+                var hash = ((win || window).location.hash).replace(/^#/, '');
+                try {
+                    return $.browser.mozilla ? hash : decodeURIComponent(hash);
+                }
+                catch (error) {
+                    return hash;
+                }
+            },
+            encoder: encodeURIComponent
+        };
+        jQuery(function($) {
+            // シンタックスルハイライト
+            hljs.initHighlightingOnLoad('xml', 'html', 'css', 'javascript');
+            // 目次生成
+            $('#aside > .nav-toc').exTOC({
+                contents: "#content .article",
+                headFrom : 2,
+                headTo : 5,
+                numbering : false,
+                link:true,
+                smooth:false,
+                insertMethod : 'after'
+            });
+            // Hashが合ったらその位置までスクロールする
+            var hash = locationWrapper.get();
+            if (hash) {
+                var scrollToElement = $("#" + hash);
+                window.scrollTo(0, Math.round(scrollToElement.offset().top))
+            }
+        });
+    </script>
     <script type="text/javascript">
 
         var _gaq = _gaq || [];

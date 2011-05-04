@@ -59,3 +59,7 @@ forEach自体については[forEach - MDC Docs](https://developer.mozilla.org/j
     nativeBind         = FuncProto.bind;
 
 ## reduce
+
+### void 0
+
+#### void function
