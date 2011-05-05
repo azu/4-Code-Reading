@@ -6,6 +6,7 @@
     <title>{{Title}} - 4 Code Reading</title>
     <meta name="description" content="{{description|This site for Code Reading.}}"/>
     <meta name="Keywords" content="JavaScript,Code Reading,{{keywords}}"/>
+    <link rel="shortcut icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="Pragma" content="no-cache">
@@ -50,7 +51,7 @@
             encoder: encodeURIComponent
         };
         jQuery(function($) {
-            // シンタックスルハイライト
+            // シンタックスハイライト
             hljs.initHighlightingOnLoad('xml', 'html', 'css', 'javascript');
             // 目次生成
             $('#aside > .nav-toc').exTOC({

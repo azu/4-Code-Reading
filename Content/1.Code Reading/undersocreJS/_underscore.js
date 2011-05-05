@@ -78,6 +78,7 @@
             for (var i = 0, l = obj.length; i < l; i++) {
                 // callback=iteratorにはelement, index, arrayが渡される。
                 // callを使ってcontextを決める
+                // iteratorでbreakerを返されたときはそこで終了する
                 if (iterator.call(context, obj[i], i, obj) === breaker) return;
             }
         } else {
@@ -96,6 +97,7 @@
         if (obj == null) return results;
         if (nativeMap && obj.map === nativeMap) return obj.map(iterator, context);
         each(obj, function(value, index, list) {
+            // results.lengthは0,1,2..と変化 = pushの代わり
             results[results.length] = iterator.call(context, value, index, list);
         });
         return results;
@@ -104,6 +106,7 @@
     // **Reduce** builds up a single result from a list of values, aka `inject`,
     // or `foldl`. Delegates to **ECMAScript 5**'s native `reduce` if available.
     _.reduce = _.foldl = _.inject = function(obj, iterator, memo, context) {
+        // memoは初期値と指定するもの
         var initial = memo !== void 0;// undefinedの代わりにvoid 0
         if (obj == null) obj = [];
         if (nativeReduce && obj.reduce === nativeReduce) {
@@ -111,10 +114,11 @@
             return initial ? obj.reduce(iterator, memo) : obj.reduce(iterator);
         }
         each(obj, function(value, index, list) {
-            if (!initial && index === 0) {
-                memo = value;
+            if (!initial && index === 0) {// 初期値がなくて、初回の時
+                memo = value;// objの最初の要素がvalue
                 initial = true;
             } else {
+                // 引数は previousValue, currentValue, index, array
                 memo = iterator.call(context, memo, value, index, list);
             }
         });
@@ -130,8 +134,9 @@
             if (context) iterator = _.bind(iterator, context);
             return memo !== void 0 ? obj.reduceRight(iterator, memo) : obj.reduceRight(iterator);
         }
+        // objを反転させてる
         var reversed = (_.isArray(obj) ? obj.slice() : _.toArray(obj)).reverse();
-        return _.reduce(reversed, iterator, memo, context);
+        return _.reduce(reversed, iterator, memo, context);//後はreduce
     };
 
     // Return the first value which passes a truth test. Aliased as `detect`.
@@ -154,6 +159,7 @@
         if (obj == null) return results;
         if (nativeFilter && obj.filter === nativeFilter) return obj.filter(iterator, context);
         each(obj, function(value, index, list) {
+            // iterator関数がtrulyなものを返せばresultに追加
             if (iterator.call(context, value, index, list)) results[results.length] = value;
         });
         return results;
@@ -164,6 +170,7 @@
         var results = [];
         if (obj == null) return results;
         each(obj, function(value, index, list) {
+            // filterと逆になってるだけ
             if (!iterator.call(context, value, index, list)) results[results.length] = value;
         });
         return results;
@@ -174,9 +181,11 @@
     // Aliased as `all`.
     _.every = _.all = function(obj, iterator, context) {
         var result = true;
+        // objがないならtrueを返す
         if (obj == null) return result;
-        if (nativeEvery && obj.every === nativeEvery) return obj.every(iterator, context);
+        //if (nativeEvery && obj.every === nativeEvery) return obj.every(iterator, context);
         each(obj, function(value, index, list) {
+            // 一個でもfalseな結果になったらresult=falseしてbreakする
             if (!(result = result && iterator.call(context, value, index, list))) return breaker;
         });
         return result;
