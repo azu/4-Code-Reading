@@ -14,10 +14,6 @@ a {
     border-bottom: 1px solid #adadad;
 }
 
-a:hover {
-    color: #000;
-    border-bottom: none;
-}
 
 p, ul, ol, blockquote {
     margin-bottom: 24px; /* Changing this will break the baseline grid. */
@@ -66,7 +62,7 @@ pre {
 pre {
     font-size: 12px;
     padding: 0;
-    margin: 0;
+    margin: -4px 5px 12px 5px;
     background: #f0f0f0;
     border-left: 1px solid #ccc;
     border-bottom: 1px solid #ccc;

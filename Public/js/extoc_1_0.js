@@ -160,8 +160,8 @@
 		_getTOCNtext : function(tag , text , fix , lv , prp ){
 			return this._getNText(tag,text,'ex-toc' + fix + ' ex-toc' + fix + '-' + lv, prp);
 		},
-		_getUID : function(){
-			return 'ex-toc-uid'+($j.ex.TOC.cfg.uID++);
+		_getUID : function(text){
+			return (text || 'ex-toc-uid')+"-"+($j.ex.TOC.cfg.uID++);
 		},
 		_getLabel : function(level,forHead){
 			var o = this,c = o.cfg;
@@ -192,7 +192,14 @@
 			var cls = baseCls + '-' + nlen;
 
 			var id = headNode[0].id;
-			if(!id)headNode.attr('id',id = o._getUID());
+			if(!id){
+                id = o._getUID(headNode.text() || null);
+                var aid = $('<a />',{
+                    href : "#"+encodeURIComponent(id)
+                })
+                headNode.attr('id', id);
+                headNode.wrap(aid);
+            }
 
 			var label = o._getTOCNtext('span',o._getLabel(level) , '-label' , nlen)
 			var text = o._getTOCNtext('span',headNode.text() , '-text' , nlen)

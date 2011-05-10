@@ -78,6 +78,16 @@ h1, h2, h3 {
     margin-left: 20px;
 }
 
+div.article h1, div.article h2, div.article h3 {
+    margin-top: 0.5em;
+}
+
+div.article h2:before, div.article h3:before {
+    font-size: 98%;
+    content: "■";
+    margin-right: 0.2em;
+}
+
 #aside h3 {
     margin: 10px;
 }
