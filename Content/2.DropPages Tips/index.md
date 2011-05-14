@@ -4,7 +4,12 @@
 @Body
 [DropPages]で運営しているので、[DropPages]関係のTipsなどを書いていく場所
 
-##Markdown
+このサイトについてやDropPagesの使い方については
+[DropPagesでエクストリームコードリーディング環境を作る | Web scratch](http://efcl.info/2011/0510/res2744/ "DropPagesでエクストリームコードリーディング環境を作る | Web scratch")
+で紹介したので、そちらを見るといい。
+
+
+## Markdown
 DropPagesはMarkdown形式でContentを書いていける。
 そのため、デフォルトテーマだとtxtなどの拡張子になってるけど、mdやmarkdownなどの拡張子でも問題なく使える。
 
@@ -29,6 +34,10 @@ JetBrains製IDEにはスニペット的なFile Templeteがあるので、以下�
 という感じで、変数がなかったときの初期値もかけるので意外とテンプレートも工夫できる。
 
 このサイトのテンプレートとかを含めて[azu/4-Code-Reading - GitHub]に置いてある。
+
+## robot.txt
+robot.txtの設置方法はPublicフォルダ直下にrobot.txtを置くだけでよい。
+[robot.txt](http://sig.droppages.com/robots.txt "robot.txt")という感じでアクセスできるようになる。
 
 
 [DropPages]: http://droppages.com/
